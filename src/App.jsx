@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     const renderLogin = this.state.renderLoginForm ? (
-      <LoginForm />
+      <LoginForm submitFormHandler={this.onLogin} />
     ) : (
       <button
         id="login"
@@ -40,8 +40,8 @@ class App extends Component {
         />
       </>
     );
+    
   }
-
   onLogin = async e => {
     e.preventDefault();
     const response = await authenticate(
@@ -51,10 +51,12 @@ class App extends Component {
     if (response.authenticated) {
       this.setState({ authenticated: true });
     } else {
-      this.setState({ message: resonse.message, renderLoginForm: false });
+      this.setState({ message: response.message, renderLoginForm: false });
     }
   };
 
+
 }
+
 
 export default App;
