@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DisplayCooperResult from "./components/DisplayCooperResult";
+import InputFields from './components/InputFields';
 
 class App extends Component {
   state = {
