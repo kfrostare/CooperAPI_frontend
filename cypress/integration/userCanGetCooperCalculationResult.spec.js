@@ -11,5 +11,3 @@ describe("Cooper Client calculates successfully", () => {
     cy.get("p#cooper-result").should("contain", "Result: Poor");
   });
 });
-
-//we might need to rename this to feature.js
