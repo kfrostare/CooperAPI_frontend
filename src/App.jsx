@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from './components/InputFields';
+import LoginForm from "./components/LoginForm";
 
 class App extends Component {
   state = {
@@ -18,11 +19,14 @@ class App extends Component {
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
+        <button id="login">Login</button>
         <DisplayCooperResult
         distance={this.state.distance}
         gender={this.state.gender}
         age={this.state.age}
         />
+        <button id="login">Login</button>
+        <LoginForm />
       </>
     );
   }

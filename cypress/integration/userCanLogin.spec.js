@@ -1,6 +1,6 @@
 describe("User authenticates", () => {
     beforeEach(() => {
-        crypto.visit("/");        
+        cy.visit("/");        
     });
 
     it("successfully with valid credentials", () => {
