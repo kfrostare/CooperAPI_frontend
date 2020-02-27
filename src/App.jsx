@@ -8,7 +8,10 @@ class App extends Component {
   state = {
     distance: "",
     gender: "female",
-    age: ""
+    age: "",
+    renderLoginForm: false,
+    authenticated: false,
+    message: ""
   };
 
   onChangeHandler = e => {
@@ -16,20 +19,42 @@ class App extends Component {
   };
 
   render() {
+    const renderLogin = this.state.renderLoginForm ? (
+      <LoginForm />
+    ) : (
+      <button
+        id="login"
+        onClick={() => this.setState({ renderLoginForm: true })}
+      >
+        Login
+      </button>
+    );
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
-        <button id="login">Login</button>
+        {renderLogin}
         <DisplayCooperResult
-        distance={this.state.distance}
-        gender={this.state.gender}
-        age={this.state.age}
+          distance={this.state.distance}
+          gender={this.state.gender}
+          age={this.state.age}
         />
-        <button id="login">Login</button>
-        <LoginForm />
       </>
     );
   }
+
+  onLogin = async e => {
+    e.preventDefault();
+    const response = await authenticate(
+      e.target.email.value,
+      e.target.password.value
+    );
+    if (response.authenticated) {
+      this.setState({ authenticated: true });
+    } else {
+      this.setState({ message: resonse.message, renderLoginForm: false });
+    }
+  };
+
 }
 
 export default App;
