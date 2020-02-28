@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { authenticate } from './modules/auth';
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
