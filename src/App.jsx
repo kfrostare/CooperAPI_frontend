@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import { authenticate } from "./modules/auth";
 import DisplayCooperResult from "./components/DisplayCooperResult";
-import InputFields from './components/InputFields';
+import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
 
 class App extends Component {
@@ -40,7 +40,6 @@ class App extends Component {
         />
       </>
     );
-    
   }
   onLogin = async e => {
     e.preventDefault();
@@ -54,9 +53,6 @@ class App extends Component {
       this.setState({ message: response.message, renderLoginForm: false });
     }
   };
-
-
 }
-
 
 export default App;
