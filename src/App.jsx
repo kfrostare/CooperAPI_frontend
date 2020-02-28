@@ -40,14 +40,19 @@ class App extends Component {
           </>
         );
         break;
-        case authenticated:
-          renderLogin = (
-            <p>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
-          );
-          performanceDataIndex = (
-            <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
-          )
-          break;
+      case authenticated:
+        renderLogin = (
+          <p>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+        );
+        performanceDataIndex = (
+          <button
+            id="show-index"
+            onClick={() => this.setState({ renderIndex: true })}
+          >
+            Show past entries
+          </button>
+        );
+        break;
     }
     return (
       <>
@@ -59,8 +64,11 @@ class App extends Component {
           age={this.state.age}
           authenticated={this.state.authenticated}
           entrySaved={this.state.entrySaved}
-          entryHandler={() => this.setState({ entrySaved: true})}
+          entryHandler={() =>
+            this.setState({ entrySaved: true, updateIndex: true })
+          }
         />
+        {performanceDataIndex}
       </>
     );
   }
