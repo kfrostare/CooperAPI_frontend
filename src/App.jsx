@@ -4,6 +4,7 @@ import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
 
+let performanceDataIndex;
 class App extends Component {
   state = {
     distance: "",
@@ -39,13 +40,14 @@ class App extends Component {
           </>
         );
         break;
-      case authenticated:
-        renderLogin = (
-          <p id="message">
-            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
-          </p>
-        );
-        break;
+        case authenticated:
+          renderLogin = (
+            <p>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+          );
+          performanceDataIndex = (
+            <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
+          )
+          break;
     }
     return (
       <>
