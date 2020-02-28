@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { authenticate } from './modules/auth';
+import React, { Component } from "react";
+import { authenticate } from "./modules/auth";
 import DisplayCooperResult from "./components/DisplayCooperResult";
-import InputFields from './components/InputFields';
+import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
 
 class App extends Component {
@@ -18,11 +18,10 @@ class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
     let renderLogin;
-    switch(true) {
+    switch (true) {
       case renderLoginForm && !authenticated:
         renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
         break;
@@ -41,7 +40,9 @@ class App extends Component {
         break;
       case authenticated:
         renderLogin = (
-          <p id="message">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+          <p id="message">
+            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </p>
         );
         break;
     }
@@ -56,7 +57,6 @@ class App extends Component {
         />
       </>
     );
-    
   }
 
   onLogin = async e => {
@@ -71,10 +71,7 @@ class App extends Component {
       this.setState({ message: response.message, renderLoginForm: false });
     }
   };
-
-
 }
-
 
 export default App;
 

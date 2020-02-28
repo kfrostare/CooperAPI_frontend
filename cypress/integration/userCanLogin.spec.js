@@ -13,7 +13,7 @@ describe("User authenticates", () => {
         cy.get("#message").should("contain", "Hi user@mail.com");
     })
 
-    it("unseccessfully with invalid credentials", () => {
+    it("unsuccessfully with invalid credentials", () => {
         cy.get("#login").click()
         cy.get("#login-form").within(() => {
             cy.get("#email").type("user@mail.com");
