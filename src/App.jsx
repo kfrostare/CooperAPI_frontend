@@ -19,16 +19,33 @@ class App extends Component {
   };
 
   render() {
-    const renderLogin = this.state.renderLoginForm ? (
-      <LoginForm submitFormHandler={this.onLogin} />
-    ) : (
-      <button
-        id="login"
-        onClick={() => this.setState({ renderLoginForm: true })}
-      >
-        Login
-      </button>
-    );
+    const { renderLoginForm, authenticated, message } = this.state;
+    let renderLogin;
+    switch (true) {
+      case renderLoginForm && !authenticated:
+        renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
+        break;
+      case !renderLoginForm && !authenticated:
+        renderLogin = (
+          <>
+            <button
+              id="login"
+              onClick={() => this.setState({ renderLoginForm: true })}
+            >
+              Login
+            </button>
+            <p id="message">{message}</p>
+          </>
+        );
+        break;
+      case authenticated:
+        renderLogin = (
+          <p id="message">
+            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </p>
+        );
+        break;
+    }
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
@@ -41,6 +58,7 @@ class App extends Component {
       </>
     );
   }
+
   onLogin = async e => {
     e.preventDefault();
     const response = await authenticate(
@@ -54,7 +72,6 @@ class App extends Component {
     }
   };
 }
-
 
 export default App;
 
