@@ -57,7 +57,7 @@ class App extends Component {
           age={this.state.age}
           authenticated={this.state.authenticated}
           entrySaved={this.state.entrySaved}
-          entryHandler={() => this.setState({ ebtrySaved: true})}
+          entryHandler={() => this.setState({ entrySaved: true})}
         />
       </>
     );
