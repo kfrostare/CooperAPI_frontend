@@ -12,6 +12,7 @@ const authenticate = async (email, password) => {
     return { authenticated: false, message: error.response.data.errors[0] };
   }
 };
+
 const storeAuthCredentials = ({ headers }) => {
   const credentials = {
     uid: headers["uid"],
