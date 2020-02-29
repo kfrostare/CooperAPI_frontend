@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getData } from "../modules/performanceData";
+import { Line } from 'react-chartjs-2';
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -30,7 +31,7 @@ class DisplayPerformanceData extends Component {
       dataIndex = (
         <div id="index">
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message}</div>
+            return <div key={item.id}>{item.data.distance} = {item.data.message}</div>
           })}
         </div>
       )
@@ -39,6 +40,7 @@ class DisplayPerformanceData extends Component {
     return (
       <div id="index">
         {dataIndex}
+        <Line />
       </div>
     )
   }      
