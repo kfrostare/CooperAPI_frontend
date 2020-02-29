@@ -31,14 +31,14 @@ class DisplayPerformanceData extends Component {
       dataIndex = (
         <div id="index">
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message} {item.data.distance}</div>
+            return <div key={item.id}>{item.data.distance}m, {item.data.message}</div>
           })}
         </div>
       )
     }
     const distances = []
     const labels = []
-    
+
     if (this.state.performanceData != null) {
       this.state.performanceData.forEach(entry => {
         distances.push(entry.data.distance)
@@ -49,12 +49,13 @@ class DisplayPerformanceData extends Component {
     let dataForLineDiagram = {
       datasets: [{
         data: distances,
-        labels: labels //not sure
-      }]
+        label: "Historical Data"
+      }],
+      labels: labels
     }
 
     return (
-      <div id="index">
+      <div>
         {dataIndex}
         <Line data={dataForLineDiagram}/>
       </div>
