@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { authenticate } from "./modules/auth";
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
+import { authenticate } from "./modules/auth";
 import DisplayPerformanceData from "./components/DisplayPerformanceData";
 
 let performanceDataIndex;
+
 class App extends Component {
   state = {
     distance: "",
@@ -28,27 +29,11 @@ class App extends Component {
       e.target.email.value,
       e.target.password.value
     );
-    if (this.state.renderIndex) {
-      performanceDataIndex = (
-        <>
-          <DisplayPerformanceData
-            updateIndex={this.state.updateIndex}
-            indexUpdated={() => this.setState({ updateIndex: false })}
-          />
-          <button onClick={() => this.setState({ renderIndex: false })}>
-            Hide past entries
-          </button>
-        </>
-      );
+
+    if (response.authenticated) {
+      this.setState({ authenticated: true });
     } else {
-      performanceDataIndex = (
-        <button
-          id="show-index"
-          onClick={() => this.setState({ renderIndex: true })}
-        >
-          Show past entries
-        </button>
-      );
+      this.setState({ message: response.message, renderLoginForm: false });
     }
   };
 
@@ -74,16 +59,35 @@ class App extends Component {
         break;
       case authenticated:
         renderLogin = (
-          <p>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+          <p id="message">
+            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </p>
         );
-        performanceDataIndex = (
-          <button
-            id="show-index"
-            onClick={() => this.setState({ renderIndex: true })}
-          >
-            Show past entries
-          </button>
-        );
+        if (this.state.renderIndex) {
+          performanceDataIndex = (
+            <>
+              <DisplayPerformanceData
+                updateIndex={this.state.updateIndex}
+                indexUpdated={() => this.setState({ updateIndex: false })}
+              />
+              <button
+                id="hide-index"
+                onClick={() => this.setState({ renderIndex: false })}
+              >
+                Hide past entries
+              </button>
+            </>
+          );
+        } else {
+          performanceDataIndex = (
+            <button
+              id="show-index"
+              onClick={() => this.setState({ renderIndex: true })}
+            >
+              Show past entries
+            </button>
+          );
+        }
         break;
     }
     return (
@@ -105,4 +109,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
