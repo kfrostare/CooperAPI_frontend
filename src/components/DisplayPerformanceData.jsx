@@ -31,16 +31,32 @@ class DisplayPerformanceData extends Component {
       dataIndex = (
         <div id="index">
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.distance} = {item.data.message}</div>
+            return <div key={item.id}>{item.data.message} {item.data.distance}</div>
           })}
         </div>
       )
+    }
+    const distances = []
+    const labels = []
+    
+    if (this.state.performanceData != null) {
+      this.state.performanceData.forEach(entry => {
+        distances.push(entry.data.distance)
+        labels.push(entry.data.message)
+      })
+    }
+
+    let dataForLineDiagram = {
+      datasets: [{
+        data: distances,
+        labels: labels //not sure
+      }]
     }
 
     return (
       <div id="index">
         {dataIndex}
-        <Line />
+        <Line data={dataForLineDiagram}/>
       </div>
     )
   }      
