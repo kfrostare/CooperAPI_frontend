@@ -5,7 +5,7 @@ import LoginForm from "./components/LoginForm";
 import { authenticate } from "./modules/auth";
 import DisplayPerformanceData from "./components/DisplayPerformanceData";
 
-let performanceDataIndex;
+
 
 class App extends Component {
   state = {
@@ -39,6 +39,7 @@ class App extends Component {
 
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
+    let performanceDataIndex;
     let renderLogin;
     switch (true) {
       case renderLoginForm && !authenticated:

@@ -8,7 +8,7 @@ describe("User attempts to view their performance data", () => {
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/vi/sign_in",
+      url: "http://localhost:3000/api/v1/sign_in",
       response: "fixture:login.json",
       headers: {
         uid: "user@mail.com"
@@ -25,7 +25,7 @@ describe("User attempts to view their performance data", () => {
         .click();
     });
   });
-  it("successfully", async () => {
+  it("successfully", () => {
     cy.get("#show-index").click();
     cy.get("#index").within(() => {
       cy.contains("Below Average");
