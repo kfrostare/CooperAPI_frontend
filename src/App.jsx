@@ -14,11 +14,42 @@ class App extends Component {
     renderLoginForm: false,
     authenticated: false,
     message: "",
-    entrySaved: false
+    entrySaved: false,
+    renderIndex: false
   };
 
   onChangeHandler = e => {
     this.setState({ [e.target.name]: e.target.value, entrySaved: false });
+  };
+
+  onLogin = async e => {
+    e.preventDefault();
+    const response = await authenticate(
+      e.target.email.value,
+      e.target.password.value
+    );
+    if (this.state.renderIndex) {
+      performanceDataIndex = (
+        <>
+          <DisplayPerformanceData
+            updateIndex={this.state.updateIndex}
+            indexUpdated={() => this.setState({ updateIndex: false })}
+          />
+          <button onClick={() => this.setState({ renderIndex: false })}>
+            Hide past entries
+          </button>
+        </>
+      );
+    } else {
+      performanceDataIndex = (
+        <button
+          id="show-index"
+          onClick={() => this.setState({ renderIndex: true })}
+        >
+          Show past entries
+        </button>
+      );
+    }
   };
 
   render() {
@@ -73,35 +104,5 @@ class App extends Component {
       </>
     );
   }
-
-  onLogin = async e => {
-    e.preventDefault();
-    const response = await authenticate(
-      e.target.email.value,
-      e.target.password.value
-    );
-    if (this.state.renderIndex) {
-      performanceDataIndex = (
-        <>
-          <DisplayPerformanceData
-            updateIndex={this.state.updateIndex}
-            indexUpdated={() => this.setState({ updateIndex: false })}
-          />
-          <button onClick={() => this.setState({ renderIndex: false })}>
-            Hide past entries
-          </button>
-        </>
-      );
-    } else {
-      performanceDataIndex = (
-        <button
-          id="show-index"
-          onClick={() => this.setState({ renderIndex: true })}
-        >
-          Show past entries
-        </button>
-      );
-    }
-  };
 }
 export default App;

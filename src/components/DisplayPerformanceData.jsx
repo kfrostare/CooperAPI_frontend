@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { saveData } from ".src/modules/performanceData";
+import { getData } from "../modules/performanceData.js";
 
 class DisplayPerformanceData extends Component {
   state = {
