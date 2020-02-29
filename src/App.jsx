@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
-import { authenticate } from "./modules/auth";
+import { authenticate } from './modules/auth';
 import DisplayPerformanceData from "./components/DisplayPerformanceData";
 
 
@@ -41,7 +41,7 @@ class App extends Component {
     const { renderLoginForm, authenticated, message } = this.state;
     let performanceDataIndex;
     let renderLogin;
-    switch (true) {
+    switch(true) {
       case renderLoginForm && !authenticated:
         renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
         break;
@@ -78,7 +78,7 @@ class App extends Component {
                 Hide past entries
               </button>
             </>
-          );
+          )
         } else {
           performanceDataIndex = (
             <button
@@ -87,7 +87,7 @@ class App extends Component {
             >
               Show past entries
             </button>
-          );
+          )
         }
         break;
     }

@@ -42,4 +42,4 @@ const getData = async () => {
   return response;
 };
 
-export { getData, saveData };
+export { saveData, getData };
