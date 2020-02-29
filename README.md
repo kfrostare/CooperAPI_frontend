@@ -1,47 +1,59 @@
-# The Cooper Tracker (API)
-*Authors are [Karolina Frostare](https://github.com/kfrostare) and [Daniel Bryant](https://github.com/DanielGITB)*
+# [The Cooper Tracker (API)](http://kfrostare-cooperapp.netlify.com/) [![Netlify Status](https://api.netlify.com/api/v1/badges/2613983d-db4f-4e1e-a22f-4ae66045ca34/deploy-status)](https://app.netlify.com/sites/kfrostare-cooperapp/deploys)
+Authors are [Karolina Frostare](https://github.com/kfrostare) and [Daniel Bryant](https://github.com/DanielGITB)<br>*Click on the title to visit the application.*
 
 ![Cooper Runners App](src/cooper_app_printscreen.png)
 
+
 ### Description
-The client has requested a workout tracking application that will allow users to track their fitness using the Cooper Test. This is a software solution where users can calculate and record their data over time. The app also presents any historical data presented by the user.
+The client has requested a workout tracking application that will allow users to track their fitness using the Cooper Test. This is a software solution where users can calculate and record their data over time. The app also presents any historical data logged by the user.
 
 ### Getting started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+If you want to use this project as blue prints, be my guest. Here's how it's done:
 
-Ruby version
+#### Installments and System dependencies
+
+First of all, make sure you get the other half of this project, [the back end that runs on Ruby on Rails.](https://github.com/kfrostare/CooperAPI_backend). This is the [front end](https://github.com/kfrostare/CooperAPI_frontend) of the application. 
+
+Make sure you use the correct<br> **Ruby version**
+```
+rvm use -v 2.5.1
 ```
 
+#### Testing framework
+If you're anything like me you wanna test A LOT before deploying. I used Cypress, Jest and Enzyme while building this application.
 ```
-* System dependencies
-
-What things you need to install the software and how to install them
-
-* Configuration
+yarn -D add cypress
 ```
-
 ```
-
-* Database creation
+yarn add -D enzyme enzyme-adapter-react-16 react-test-renderer
 ```
 
+#### Database creation
+Our database is over [here](https://github.com/kfrostare/CooperAPI_backend), make sure you get it!
+
+#### How to run the test suite
 ```
-
-* Database initialization
+yarn cy:open
 ```
-
-```
-
-* How to run the test suite
-
-Explain how to run the automated tests for this system
-
-### Services
-
 
 ### Deployment instructions
 
-Add additional notes about how to deploy this on a live system
+This software was deployed using Netlify ([front end](https://github.com/kfrostare/CooperAPI_frontend)) and Heroku ([back end](https://github.com/kfrostare/CooperAPI_backend)). This is - sort of - how we did it.
+
+#### Heroku
+I'm assuming you already have an account and know how to fork a Repo.
+1. Create a new project
+2. Add Repo through GitHub
+3. Disable 'Wait for CI to pass before deploy'
+4. Enable automatic deploys
+5. Choose branch (I went with master)
+6. Click on 'Deploy Branch'
+7. Visit 'settings'
+8. Save Heroku git URL
+
+#### Netlify
+I'm assuming you already have an account and know how to change your url- settings.
+
 
 ### Built with
 
