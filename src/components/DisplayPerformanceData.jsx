@@ -1,43 +1,47 @@
-import React, { Component } from "react";
-import { getData } from "../modules/performanceData.js";
+import React, { Component } from 'react';
+import { getData } from "../modules/performanceData";
 
 class DisplayPerformanceData extends Component {
   state = {
     performanceData: null
-  };
+  }
 
   componentDidMount() {
-    this.getPerformanceData();
+    this.getPerformanceData()
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.updateIndex != prevProps.updateIndex) {
-      this.getPerformanceData();
+      this.getPerformanceData()
     }
   }
 
   async getPerformanceData() {
     let result = await getData();
-    this.setState({ performanceData: result.data.entries }, () => {
+    this.setState({performanceData: result.data.entries}, () => {
       this.props.indexUpdated();
-    });
+    })
   }
 
-  render() {
+  render () {
     let dataIndex;
 
     if (this.state.performanceData != null) {
       dataIndex = (
-        <div>
+        <div id="index">
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message}</div>;
+            return <div key={item.id}>{item.data.message}</div>
           })}
         </div>
-      );
+      )
     }
 
-    return <div>{dataIndex}</div>;
-  }
+    return (
+      <div id="index">
+        {dataIndex}
+      </div>
+    )
+  }      
 }
 
-export default DisplayPerformanceData;
+export default DisplayPerformanceData
