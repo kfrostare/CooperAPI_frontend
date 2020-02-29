@@ -1,4 +1,43 @@
+import React, { Component } from "react";
+import { saveData } from "../modules/performanceData";
 
-//If you run the test now it will complain about not 
-//finding the text that we are looking for. Its time 
-//to create a new component now.
+class DisplayPerformanceData extends Component {
+  state = {
+    performanceData: null
+  };
+
+  componentDidMount() {
+    this.getPerformanceData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.updateIndex != prevProps.updateIndex) {
+      this.getPerformanceData();
+    }
+  }
+
+  async getPerformanceData() {
+    let result = await getData();
+    this.setState({ performanceData: result.data.entries }, () => {
+      this.props.indexUpdated();
+    });
+  }
+
+  render() {
+    let dataIndex;
+
+    if (this.state.performanceData != null) {
+      dataIndex = (
+        <div>
+          {this.state.performanceData.map(item => {
+            return <div key={item.id}>{item.data.message}</div>;
+          })}
+        </div>
+      );
+    }
+
+    return <div>{dataIndex}</div>;
+  }
+}
+
+export default DisplayPerformanceData;
