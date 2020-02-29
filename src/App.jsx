@@ -3,6 +3,7 @@ import { authenticate } from "./modules/auth";
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
+import DisplayPerformanceData from "./components/DisplayPerformanceData";
 
 let performanceDataIndex;
 class App extends Component {
@@ -79,14 +80,28 @@ class App extends Component {
       e.target.email.value,
       e.target.password.value
     );
-    if (response.authenticated) {
-      this.setState({ authenticated: true });
+    if (this.state.renderIndex) {
+      performanceDataIndex = (
+        <>
+          <DisplayPerformanceData
+            updateIndex={this.state.updateIndex}
+            indexUpdated={() => this.setState({ updateIndex: false })}
+          />
+          <button onClick={() => this.setState({ renderIndex: false })}>
+            Hide past entries
+          </button>
+        </>
+      );
     } else {
-      this.setState({ message: response.message, renderLoginForm: false });
+      performanceDataIndex = (
+        <button
+          id="show-index"
+          onClick={() => this.setState({ renderIndex: true })}
+        >
+          Show past entries
+        </button>
+      );
     }
   };
 }
-
 export default App;
-
-//!
