@@ -105,3 +105,4 @@ This project is licensed under the MIT License.
 * [CraftAcademy](https://www.craftacademy.se/english/) for supplying the basic structure of this application
 * [Codevolution](https://www.youtube.com/watch?v=j5P9FHiBVNo) for teaching us about inline styling
 * [Canva](https://www.canva.com/colors/color-palette-generator/) for finding awesome colors for styling
+* [Chart.js](https://www.chartjs.org/docs/latest/charts/radar.html) for cool charts

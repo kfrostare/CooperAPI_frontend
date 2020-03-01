@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getData } from "../modules/performanceData";
-import { Line } from "react-chartjs-2";
+import { Line, Polar, Bubble, Radar } from "react-chartjs-2";
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -29,11 +29,11 @@ class DisplayPerformanceData extends Component {
 
     if (this.state.performanceData != null) {
       dataIndex = (
-        <div id="index">
+        <div id="index" style={message3}>
           {this.state.performanceData.map(item => {
             return (
               <div key={item.id}>
-                {item.data.distance}m, {item.data.message}
+                {item.data.distance} | {item.data.message}
               </div>
             );
           })}
@@ -50,27 +50,38 @@ class DisplayPerformanceData extends Component {
       });
     }
 
+    
+
     let dataForLineDiagram = {
       datasets: [
         {
           data: distances,
-          label: "Historical Data",
+          label: "Past runs",
           fill: true, 
-          borderColor: "#A28C74",
-          backgroundColor: "#DDCCAF",
-          pointBackgroundColor: "#3D2C23"
+          borderColor: "#4B3021",
+          backgroundColor: "#E9C45C",
+          responsive: false,
+          fontColor: 'white',
         }
       ],
-      labels: labels
+      // labels: labels
     };
 
     return (
       <div>
         {dataIndex}
-        <Line id="lineColor" data={dataForLineDiagram} />
+        <Polar id='line' data={dataForLineDiagram} />
       </div>
     );
   }
+}
+
+const message3 = {
+  fontSize: '19px',
+  marginLeft: '800px',
+  alignItems: 'center',
+  marginLeft: '950px',
+  color: '#4B3021'
 }
 
 export default DisplayPerformanceData;
