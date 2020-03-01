@@ -137,7 +137,7 @@ const entryButton = {
   paddingBottom: '13px',
   alignItems: 'center',
   display: 'inline-block',
-  backgroundColor: 'white',
+  backgroundColor: '#E9C45C',
   color: '#4B3021',
   borderRadius: '4px'
 }
