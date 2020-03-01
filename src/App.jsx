@@ -6,8 +6,6 @@ import { authenticate } from './modules/auth';
 import DisplayPerformanceData from "./components/DisplayPerformanceData";
 // import Cooper from "./Cooper.jpg";
 
-
-
 class App extends Component {
   state = {
     distance: "",
@@ -51,6 +49,7 @@ class App extends Component {
           <>
             <button
               id="login"
+              style={button}
               onClick={() => this.setState({ renderLoginForm: true })}
             >
               Login
@@ -107,10 +106,16 @@ class App extends Component {
           }
         />
         {performanceDataIndex}
-        {/* <img src={Cooper} id="cooper" alt="The Cooper Tracker App" /> */}
       </>
     );
   }
+}
+
+//inline styling
+const button = {
+  fontSize: '15px',
+  padding: '10px',
+  alignItems: 'center'
 }
 
 export default App;
