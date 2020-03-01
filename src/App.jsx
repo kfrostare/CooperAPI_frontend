@@ -61,7 +61,8 @@ class App extends Component {
       case authenticated:
         renderLogin = (
           <p id="message" style={message1}>
-            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
+            Hey tracker - Enter your new score!
+            {/* {JSON.parse(sessionStorage.getItem("credentials")).uid} */}
           </p>
         );
         if (this.state.renderIndex) {
@@ -129,8 +130,7 @@ const loginButton = {
 
 const entryButton = {
   fontSize: '15px',
-  marginLeft: '850px',
-  marginTop: '100px',
+  marginLeft: '950px',
   paddingLeft: '25px',
   paddingRight: '25px',
   paddingTop: '12px',
@@ -143,12 +143,9 @@ const entryButton = {
 }
 
 const message1 = {
-  fontSize: '19px',
-  padding: '25px',
-  paddingTop: '2px',
+  fontSize: '45px',
   alignItems: 'center',
-  marginTop: '100px',
-  marginLeft: '800px',
+  marginLeft: '950px',
   color: '#4B3021'
 }
 
