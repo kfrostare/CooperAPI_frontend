@@ -24,14 +24,16 @@ const distance = {
   paddingTop: '2px',
   alignItems: 'center',
   marginTop: '200px',
-  marginLeft: '850px',
+  marginLeft: '800px',
   color: '#4B3021'
 }
 const distanceInput = {
   padding: '10px',
   marginTop: '300px',
   marginRight: '20px',
-  color: '#4B3021'
+  color: '#4B3021',
+  textAlign: 'center',
+  fontSize: '19px'
 
 }
 
@@ -49,13 +51,18 @@ const ageInput = {
   padding: '10px',
   marginTop: '200px',
   marginRight: '20px',
-  color: '#4B3021'
+  color: '#4B3021',
+  textAlign: 'center',
+  fontSize: '19px',
 
 }
 
 const genderButton = {
   fontSize: '15px',
-  padding: '10px',
+  paddingTop: '13px',
+  paddingBottom: '12px',
+  paddingLeft: '20px',
+  paddingRight: '20px',
   alignItems: 'center',
   display: 'inline-block',
   color: '#4B3021',
@@ -63,7 +70,7 @@ const genderButton = {
   borderRadius: '4px'
 }
 const gender = {
-  fontSize: '19px',
+  fontSize: '15px',
   padding: '10px',
   alignItems: 'center',
   color: '#4B3021'

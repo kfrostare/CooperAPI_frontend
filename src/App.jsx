@@ -114,9 +114,10 @@ class App extends Component {
 //inline styling
 const button = {
   fontSize: '15px',
-  padding: '10px',
-  paddingLeft: '15px',
-  paddingRight: '15px',
+  paddingLeft: '25px',
+  paddingRight: '25px',
+  paddingTop: '12px',
+  paddingBottom: '13px',
   alignItems: 'center',
   display: 'inline-block',
   backgroundColor: 'white',

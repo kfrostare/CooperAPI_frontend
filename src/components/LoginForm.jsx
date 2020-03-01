@@ -21,13 +21,15 @@ const email = {
   paddingTop: '10px',
   alignItems: 'center',
   marginTop: '',
-  marginLeft: '850px',
+  marginLeft: '793px',
   color: '#4B3021'
 }
 const emailInput = {
   padding: '10px',
   marginTop: '',
-  color: '#4B3021'
+  color: '#4B3021',
+  textAlign: 'center',
+  fontSize: '19px',
 }
 
 const password = {
@@ -44,17 +46,24 @@ const passwordInput = {
   padding: '10px',
   marginTop: '20px',
   marginRight: '20px',
-  color: '#4B3021'
-
+  color: '#4B3021',
+  textAlign: 'center',
+  fontSize: '19px',
+  marginRight: ''
 }
 
 const button = {
   fontSize: '15px',
-  padding: '10px',
+  paddingTop: '13px',
+  paddingBottom: '12px',
+  paddingLeft: '25px',
+  paddingRight: '25px',
   alignItems: 'center',
   display: 'inline-block',
   color: '#4B3021',
-  borderRadius: '4px'
+  backgroundColor: 'white',
+  borderRadius: '4px',
+  margin: '20px'
 }
 
 
