@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getData } from "../modules/performanceData";
-import { Line, Polar, Bubble, Radar } from "react-chartjs-2";
+import { Line, Polar, Bubble, Radar, Pie } from "react-chartjs-2";
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -50,32 +50,29 @@ class DisplayPerformanceData extends Component {
       });
     }
 
-    
-
-    let dataForLineDiagram = {
-      datasets: [
-        {
-          data: distances,
-          label: "Past runs",
-          fill: true, 
-          borderColor: "#4B3021",
-          backgroundColor: "#E9C45C",
-          responsive: false,
-          fontColor: 'white',
-        }
-      ],
-      labels: labels
+    let dataForPieDiagram = {
+      datasets: [{
+        data: distances,
+        label: "Past runs",
+        fill: true, 
+        borderColor: "#4B3021",
+        backgroundColor: "#E9C45C",
+        responsive: false,
+        fontColor: 'white',
+      }],
+      
     };
 
     return (
       <div>
         {dataIndex}
-        <Polar id='line' data={dataForLineDiagram} />
+        <Pie id='pie' data={dataForPieDiagram} />
       </div>
     );
   }
 }
 
+// styling
 const message3 = {
   fontSize: '19px',
   marginLeft: '800px',

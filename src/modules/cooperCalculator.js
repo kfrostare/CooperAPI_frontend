@@ -1,10 +1,10 @@
 const CooperCalculator = (distance, gender, age) => {
   const ratings = [
-    "Excellent",
-    "Above average",
-    "Average",
-    "Below average",
-    "Poor"
+    "BOOM! Superstar.",
+    "Getting closer.",
+    "Not that special.",
+    "You can do better.",
+    "Booo!"
   ];
 
   const cooperTable = {

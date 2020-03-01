@@ -77,7 +77,7 @@ class App extends Component {
                 style={entryButton}
                 onClick={() => this.setState({ renderIndex: false })}
               >
-                Hide past entries
+                Hide past results
               </button>
             </>
           )
@@ -88,7 +88,7 @@ class App extends Component {
               style={entryButton}
               onClick={() => this.setState({ renderIndex: true })}
             >
-              Show past entries
+              Show past results
             </button>
           )
         }
