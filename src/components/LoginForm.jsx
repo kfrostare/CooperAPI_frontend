@@ -16,30 +16,35 @@ const LoginForm = ({ submitFormHandler }) => {
 //inline styling
 //inline styling
 const email = {
-  fontSize: '25px',
+  fontSize: '19px',
   padding: '25px',
+  paddingTop: '10px',
   alignItems: 'center',
   marginTop: '',
-  marginLeft: '850px'
+  marginLeft: '850px',
+  color: '#4B3021'
 }
 const emailInput = {
   padding: '10px',
   marginTop: '',
-
+  color: '#4B3021'
 }
 
 const password = {
-  fontSize: '25px',
+  fontSize: '19px',
   padding: '25px',
+  paddingTop: '10px',
   alignItems: 'center',
   marginTop: '',
-  marginLeft: ''
+  marginLeft: '',
+  color: '#4B3021'
 
 }
 const passwordInput = {
   padding: '10px',
-  marginTop: '50px',
-  marginRight: '20px'
+  marginTop: '20px',
+  marginRight: '20px',
+  color: '#4B3021'
 
 }
 
@@ -47,7 +52,9 @@ const button = {
   fontSize: '15px',
   padding: '10px',
   alignItems: 'center',
-  display: 'inline-block'
+  display: 'inline-block',
+  color: '#4B3021',
+  borderRadius: '4px'
 }
 
 

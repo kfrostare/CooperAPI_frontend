@@ -115,8 +115,13 @@ class App extends Component {
 const button = {
   fontSize: '15px',
   padding: '10px',
+  paddingLeft: '15px',
+  paddingRight: '15px',
   alignItems: 'center',
-  display: 'inline-block'
+  display: 'inline-block',
+  backgroundColor: 'white',
+  color: '#4B3021',
+  borderRadius: '4px'
 }
 
 export default App;

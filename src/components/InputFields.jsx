@@ -6,9 +6,9 @@ const InputFields = ({ onChangeHandler }) => {
       <label style={distance}>Distance</label>
       <input onChange={onChangeHandler} style={distanceInput} name="distance" id="distance"></input>
 
-      <select onChange={onChangeHandler} style={button} name="gender" id="gender">
-        <option value="female">Female</option>
-        <option value="male">Male</option>
+      <select onChange={onChangeHandler} style={genderButton} name="gender" id="gender">
+        <option value="female" style={gender}>Female</option>
+        <option value="male" style={gender}>Male</option>
       </select>
 
       <label style={age}>Age</label>
@@ -19,39 +19,54 @@ const InputFields = ({ onChangeHandler }) => {
 
 //inline styling
 const distance = {
-  fontSize: '25px',
+  fontSize: '19px',
   padding: '25px',
+  paddingTop: '2px',
   alignItems: 'center',
   marginTop: '200px',
-  marginLeft: '850px'
+  marginLeft: '850px',
+  color: '#4B3021'
 }
 const distanceInput = {
   padding: '10px',
-  marginTop: '200px',
-  marginRight: '20px'
+  marginTop: '300px',
+  marginRight: '20px',
+  color: '#4B3021'
 
 }
 
 const age = {
-  fontSize: '25px',
+  fontSize: '19px',
   padding: '25px',
+  paddingTop: '2px',
   alignItems: 'center',
   marginTop: '200px',
-  marginLeft: ''
+  marginLeft: '',
+  color: '#4B3021'
 
 }
 const ageInput = {
   padding: '10px',
   marginTop: '200px',
-  marginRight: '20px'
+  marginRight: '20px',
+  color: '#4B3021'
 
 }
 
-const button = {
+const genderButton = {
   fontSize: '15px',
   padding: '10px',
   alignItems: 'center',
-  display: 'inline-block'
+  display: 'inline-block',
+  color: '#4B3021',
+  backgroundColor: 'white',
+  borderRadius: '4px'
+}
+const gender = {
+  fontSize: '19px',
+  padding: '10px',
+  alignItems: 'center',
+  color: '#4B3021'
 }
 
 export default InputFields;
