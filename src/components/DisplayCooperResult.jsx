@@ -43,6 +43,7 @@ const DisplayCooperResult = ({
 const resultButton = {
   fontSize: '15px',
   marginLeft: '950px',
+  marginTop: '20px',
   paddingLeft: '25px',
   paddingRight: '25px',
   paddingTop: '12px',

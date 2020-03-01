@@ -61,7 +61,7 @@ const button = {
   alignItems: 'center',
   display: 'inline-block',
   color: '#4B3021',
-  backgroundColor: 'white',
+  backgroundColor: '#E9C45C',
   borderRadius: '4px',
   margin: '20px'
 }
