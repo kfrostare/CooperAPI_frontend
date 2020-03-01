@@ -1,7 +1,7 @@
 # [The Cooper Tracker (API)](http://kfrostare-cooperapp.netlify.com/) [![Netlify Status](https://api.netlify.com/api/v1/badges/2613983d-db4f-4e1e-a22f-4ae66045ca34/deploy-status)](https://app.netlify.com/sites/kfrostare-cooperapp/deploys)
 Authors are [Karolina Frostare](https://github.com/kfrostare) and [Daniel Bryant](https://github.com/DanielGITB)<br>*Click on the title to visit the application.*
 
-![Cooper Runners App](src/cooper_printscreen.png)
+![Cooper Runners App](src/printscreen_loggedin.png)
 
 
 ### Description

@@ -64,7 +64,7 @@ class DisplayPerformanceData extends Component {
           fontColor: 'white',
         }
       ],
-      // labels: labels
+      labels: labels
     };
 
     return (
