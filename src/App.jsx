@@ -4,7 +4,7 @@ import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
 import { authenticate } from './modules/auth';
 import DisplayPerformanceData from "./components/DisplayPerformanceData";
-import Cooper from "./Cooper.jpg";
+// import Cooper from "./Cooper.jpg";
 
 
 
@@ -107,7 +107,7 @@ class App extends Component {
           }
         />
         {performanceDataIndex}
-        <img src={Cooper} className="cooperApp" alt="The Cooper Tracker App" />
+        {/* <img src={Cooper} id="cooper" alt="The Cooper Tracker App" /> */}
       </>
     );
   }
