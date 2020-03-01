@@ -3,31 +3,55 @@ import React from "react";
 const InputFields = ({ onChangeHandler }) => {
   return (
     <>
-      <label style={label}>Distance</label>
-      <input onChange={onChangeHandler} style={input} name="distance" id="distance"></input>
+      <label style={distance}>Distance</label>
+      <input onChange={onChangeHandler} style={distanceInput} name="distance" id="distance"></input>
 
-      <select onChange={onChangeHandler} style={input} name="gender" id="gender">
+      <select onChange={onChangeHandler} style={button} name="gender" id="gender">
         <option value="female">Female</option>
         <option value="male">Male</option>
       </select>
 
-      <label style={label}>Age</label>
-      <input onChange={onChangeHandler} style={input} name="age" id="age"></input>
+      <label style={age}>Age</label>
+      <input onChange={onChangeHandler} style={ageInput} name="age" id="age"></input>
     </>
   );
 };
 
 //inline styling
-const label = {
+const distance = {
   fontSize: '25px',
   padding: '25px',
   alignItems: 'center',
-  paddingTop: '200px'
+  marginTop: '200px',
+  marginLeft: '850px'
+}
+const distanceInput = {
+  padding: '10px',
+  marginTop: '200px',
+  marginRight: '20px'
+
 }
 
-const input = {
-  padding: '10px'
+const age = {
+  fontSize: '25px',
+  padding: '25px',
+  alignItems: 'center',
+  marginTop: '200px',
+  marginLeft: ''
+
+}
+const ageInput = {
+  padding: '10px',
+  marginTop: '200px',
+  marginRight: '20px'
+
 }
 
+const button = {
+  fontSize: '15px',
+  padding: '10px',
+  alignItems: 'center',
+  display: 'inline-block'
+}
 
 export default InputFields;

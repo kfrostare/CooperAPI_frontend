@@ -115,7 +115,8 @@ class App extends Component {
 const button = {
   fontSize: '15px',
   padding: '10px',
-  alignItems: 'center'
+  alignItems: 'center',
+  display: 'inline-block'
 }
 
 export default App;
