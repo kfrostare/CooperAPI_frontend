@@ -49,18 +49,18 @@ class App extends Component {
           <>
             <button
               id="login"
-              style={button}
+              style={loginButton}
               onClick={() => this.setState({ renderLoginForm: true })}
             >
               Login
             </button>
-            <p id="message">{message}</p>
+            <p id="message" >{message}</p>
           </>
         );
         break;
       case authenticated:
         renderLogin = (
-          <p id="message">
+          <p id="message" style={message1}>
             Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
           </p>
         );
@@ -73,6 +73,7 @@ class App extends Component {
               />
               <button
                 id="hide-index"
+                style={entryButton}
                 onClick={() => this.setState({ renderIndex: false })}
               >
                 Hide past entries
@@ -83,6 +84,7 @@ class App extends Component {
           performanceDataIndex = (
             <button
               id="show-index"
+              style={entryButton}
               onClick={() => this.setState({ renderIndex: true })}
             >
               Show past entries
@@ -112,7 +114,7 @@ class App extends Component {
 }
 
 //inline styling
-const button = {
+const loginButton = {
   fontSize: '15px',
   paddingLeft: '25px',
   paddingRight: '25px',
@@ -123,6 +125,31 @@ const button = {
   backgroundColor: 'white',
   color: '#4B3021',
   borderRadius: '4px'
+}
+
+const entryButton = {
+  fontSize: '15px',
+  marginLeft: '850px',
+  marginTop: '100px',
+  paddingLeft: '25px',
+  paddingRight: '25px',
+  paddingTop: '12px',
+  paddingBottom: '13px',
+  alignItems: 'center',
+  display: 'inline-block',
+  backgroundColor: 'white',
+  color: '#4B3021',
+  borderRadius: '4px'
+}
+
+const message1 = {
+  fontSize: '19px',
+  padding: '25px',
+  paddingTop: '2px',
+  alignItems: 'center',
+  marginTop: '100px',
+  marginLeft: '800px',
+  color: '#4B3021'
 }
 
 export default App;

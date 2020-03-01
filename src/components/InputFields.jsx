@@ -23,13 +23,13 @@ const distance = {
   padding: '25px',
   paddingTop: '2px',
   alignItems: 'center',
-  marginTop: '200px',
+  marginTop: '100px',
   marginLeft: '800px',
   color: '#4B3021'
 }
 const distanceInput = {
   padding: '10px',
-  marginTop: '300px',
+  marginTop: '100px',
   marginRight: '20px',
   color: '#4B3021',
   textAlign: 'center',
@@ -42,14 +42,14 @@ const age = {
   padding: '25px',
   paddingTop: '2px',
   alignItems: 'center',
-  marginTop: '200px',
+  marginTop: '100px',
   marginLeft: '',
   color: '#4B3021'
 
 }
 const ageInput = {
   padding: '10px',
-  marginTop: '200px',
+  marginTop: '100px',
   marginRight: '20px',
   color: '#4B3021',
   textAlign: 'center',
