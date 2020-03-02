@@ -35,6 +35,10 @@ Our database is over [here](https://github.com/kfrostare/CooperAPI_backend), mak
 ```
 yarn cy:open
 ```
+#### How to try out the app
+To try out the app use the following login credentials:
+email: user@mail.com
+password: password
 
 ### Deployment instructions
 
