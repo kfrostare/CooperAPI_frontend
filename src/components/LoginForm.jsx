@@ -14,7 +14,6 @@ const LoginForm = ({ submitFormHandler }) => {
 };
 
 //inline styling
-//inline styling
 const email = {
   fontSize: '19px',
   padding: '25px',
